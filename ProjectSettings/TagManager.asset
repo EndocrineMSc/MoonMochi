@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Counter
   - Hare
+  - Hare2
   layers:
   - Default
   - TransparentFX

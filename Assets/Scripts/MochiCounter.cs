@@ -1,24 +1,50 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class MochiCounter : MonoBehaviour
+namespace MoonMochi.Mechanics.UI
 {
-    internal void AddMochi()
+    internal class MochiCounter : MonoBehaviour
     {
-        throw new NotImplementedException();
-    }
+        #region Fields and Properties
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+        private TextMeshProUGUI _mochiCounter;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        internal int AmountMochi { get; private set; } = 0;
+
+        #endregion
+
+        #region Functions
+
+        internal void AddMochi(int amount = 1)
+        {
+            AmountMochi += amount;
+        }
+
+        internal void SpendMochi(int cost)
+        {
+            if (AmountMochi >= cost)
+            {
+                AmountMochi -= cost;
+            }
+            else
+            {
+                Debug.Log("The program is not supposed to come here - SpendMochi; MochiCounter;");
+            }
+        }
+
+        void Start()
+        {
+            _mochiCounter = GetComponentInChildren<TextMeshProUGUI>();
+        }
+
+        void Update()
+        {
+            _mochiCounter.text = AmountMochi.ToString();
+        }
+
+        #endregion
     }
 }
