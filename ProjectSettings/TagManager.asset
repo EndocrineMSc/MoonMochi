@@ -8,6 +8,8 @@ TagManager:
   - Hare
   - Hare2
   - MochiSpawn
+  - MainMenu
+  - Settings
   layers:
   - Default
   - TransparentFX
