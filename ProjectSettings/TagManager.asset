@@ -7,6 +7,7 @@ TagManager:
   - Counter
   - Hare
   - Hare2
+  - MochiSpawn
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Background
   - 
   - 
   - 
@@ -41,6 +42,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1355703595
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

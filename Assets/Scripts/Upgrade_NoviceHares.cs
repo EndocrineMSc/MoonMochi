@@ -12,6 +12,7 @@ namespace MoonMochi.Mechanics.Upgrades
 
         public override void UpgradeEffect()
         {
+            base.UpgradeEffect();
             UpgradeEvents.Instance.NoviceHares_Bought?.Invoke();
             GetComponent<UpgradeButtonIOHandler>().UpgradeIsBought = true;
         }

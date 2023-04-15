@@ -74,7 +74,6 @@ namespace MoonMochi.Mechanics
         private void Update()
         {
             _currentTime += Time.deltaTime;
-            Debug.Log(_currentTime);
 
             if (Input.GetMouseButtonDown(0))
             {

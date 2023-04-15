@@ -24,6 +24,7 @@ namespace MoonMochi.Mechanics.Upgrades
 
         public override void UpgradeEffect()
         {
+            base.UpgradeEffect();
             _secondHare.SetActive(true);
             UpgradeEvents.Instance.SecondHare_Bought?.Invoke();
             GetComponent<UpgradeButtonIOHandler>().UpgradeIsBought = true;

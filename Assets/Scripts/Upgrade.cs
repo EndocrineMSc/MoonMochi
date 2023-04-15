@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using MoonMochi.Mechanics.UI;
+using UnityEngine;
 
 namespace MoonMochi.Mechanics.Upgrades
 {
@@ -6,8 +7,8 @@ namespace MoonMochi.Mechanics.Upgrades
     internal abstract class Upgrade : MonoBehaviour
     {
         #region Fields and Properties
-
         internal int Cost { get; set; }
+        protected const string COUNTER_TAG = "Counter";
 
         #endregion
 
@@ -18,7 +19,11 @@ namespace MoonMochi.Mechanics.Upgrades
             SetCost();
         }
 
-        public abstract void UpgradeEffect();
+        public virtual void UpgradeEffect()
+        {
+            MochiCounter mochiCounter = GameObject.FindGameObjectWithTag(COUNTER_TAG).GetComponent<MochiCounter>();
+            mochiCounter.SpendMochi(Cost);
+        }
 
         protected abstract void SetCost();
 
